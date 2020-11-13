@@ -7,15 +7,12 @@ public class TreinandoScanner {
 	public static void main(String[] args) {
 		/*
 		 * Crie um programa que leia o seu String nome; int idade; float peso; Imprimir
-		 * Meu nome é ... Minha idade é ... Meu peso é ... 
-		 * Realize um teste com o if:
-		 * Caso peso seja maior que 80 imprimir : Vocé precisa correr mais. 
-		 * Caso peso seja menor : Coma mais carboidratos. 
-		 * Adicione toda a cadeia de codigo que
+		 * Meu nome é ... Minha idade é ... Meu peso é ... Realize um teste com o if:
+		 * Caso peso seja maior que 80 imprimir : Vocé precisa correr mais. Caso peso
+		 * seja menor : Coma mais carboidratos. Adicione toda a cadeia de codigo que
 		 * criamos em uma estrutura while enquanto o valor de controle for "C"
 		 * 
-		 * ++ é o mesmo que somar +1 
-		 * -- é o mesmo que diminuir -1
+		 * ++ é o mesmo que somar +1 -- é o mesmo que diminuir -1
 		 */
 
 		String controle = "C";
@@ -31,6 +28,10 @@ public class TreinandoScanner {
 
 			System.out.printf("\nMeu nome é %s \nMinha idade é %d \nMeu peso é %.2f \n", nome, idade, peso);
 
+			// metodo verificaIdade(peso,idade,nome) dentro da classe TreinandoScanner
+			verificarIdadeEPeso(peso, idade, nome);
+			// metodo verificaIdadeComSwitch(idade) dentro da classe TreinandoScanner
+			verificaIdadeComSwitch(idade);
 		}
 	}
 
