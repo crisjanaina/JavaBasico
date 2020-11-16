@@ -21,22 +21,58 @@ public class Principal {
 		Scanner sc = new Scanner(System.in);
 		String texto = sc.nextLine();
 
-		System.out.println(texto.substring(0, 1));
+		/*
+		 * System.out.println(texto.substring(0, 1));
+		 * 
+		 * for (int i = 0; i < texto.length(); i++) { if (i == 8) {
+		 * System.out.print("O tamanho da String é maior que 10"); }
+		 * System.out.println(texto.substring(i, (i + 1))); // i++ = i = i + 1 // (i+1),
+		 * o i não é alterado
+		 * 
+		 * if (texto.substring(i, (i + 1)).toLowerCase().equals("a") && (i + 2) <
+		 * texto.length()) { i = i + 2;
+		 * 
+		 * }
+		 * 
+		 * }
+		 */
 
 		for (int i = 0; i < texto.length(); i++) {
-			if (i == 8) {
-				System.out.print("O tamanho da String é maior que 10");
-			}
-			System.out.println(texto.substring(i, (i + 1)));
-			// i++ = i = i + 1
-			// (i+1), o i não é alterado
 
+			System.out.println(texto.substring(i, (i + 1)));
 			if (texto.substring(i, (i + 1)).toLowerCase().equals("a") && (i + 2) < texto.length()) {
 				i = i + 2;
-
 			}
-
 		}
-
+		
+		int controleAchouA = 0;
+		// contains... verifica se a String contem o caracter informado.
+		// break - para o for
+		// continue - ele volta para o inicio do for
+		for (String a1: texto.split("")) {
+			if (controleAchouA == 0) {
+				System.out.println(a1);
+			} else {
+				controleAchouA--;
+			}
+			if (a1.toLowerCase().contains("a")) {
+				controleAchouA = 2;
+			}
+		}
+		for (String a1 : texto.split("")) {
+			if (a1.toLowerCase().contains("b")) {
+				System.out.print("Encontrei um b");
+				continue;
+			}
+			System.out.println("Não encontrei um b");
+		}
+		for (String a1 : texto.split("")) {
+			if (a1.toLowerCase().contains("b")) {
+				System.out.print("Encontrei um b");
+				break;
+			}
+			System.out.println("Não encontrei um b");
+		}
 	}
+
 }
