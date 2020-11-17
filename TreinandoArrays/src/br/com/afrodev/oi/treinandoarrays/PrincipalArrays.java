@@ -1,4 +1,4 @@
-package br.com.afrodev.oi;
+package br.com.afrodev.oi.treinandoarrays;
 
 import java.util.Scanner;
 

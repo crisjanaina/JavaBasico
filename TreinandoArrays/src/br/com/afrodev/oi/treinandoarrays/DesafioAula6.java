@@ -1,4 +1,4 @@
-package br.com.afrodev.oi;
+package br.com.afrodev.oi.treinandoarrays;
 
 import java.util.Scanner;
 
@@ -47,6 +47,7 @@ public class DesafioAula6 {
 		float[] peso = new float[tamanho];
 		char[] sexos = new char[tamanho];
 		int opcao = 0;
+		int nrRegistro = 0;
 
 		// Adicione valores dentro de cada posição do array
 
@@ -82,35 +83,30 @@ public class DesafioAula6 {
 				break;
 			case 1:
 				for (int i = 0; i < tamanho; i++) {
-					System.out.printf("Nome: %s \n ", nomes[i]);
-					System.out.printf("Nome: %.2f \n ", peso[i]);
-					System.out.printf("Nome: %s \n ", sexos[i]);
+					System.out.printf("Nome: %s \nPeso: %.2f\nSexo: %s\n", nomes[i], peso[i], sexos[i]);
 				}
 				break;
 			case 2:
 				for (int i = 0; i < tamanho; i++) {
 
 					System.out.printf("Registro nr %d \n", (i + 1));
-					nomes[i] = lerValor("Informe seu nome:  ", sc);
-					peso[i] = lerValor("Informe seu peso: ", sc, peso[i]);
-					sexos[i] = lerValor("Informe seu sexo(F/M): ", sc, sexos[i]);
-					System.out.println("...............");
+					adicionarValoresArray(nomes, peso, sexos, i, sc);
+					System.out.println("-----------------------");
+	
 				}
 				break;
 			case 3:
-				System.out.println("Informe o n° de registro para alteração:  ");
-				int nrRegistro = sc.nextInt();
+				nrRegistro = lerValor("Informe o nº do registro para alteração:", sc, nrRegistro);
 				adicionarValoresArray(nomes, peso, sexos, (nrRegistro - 1), sc);
 				break;
 			case 4:
-				System.out.println("Informe o n° de registro para alteração:  ");
-				nrRegistro = sc.nextInt();
-				System.out.println("Qual a opção que deseja alterar? \n1-Nome; \n2-Peso; \n3-Sexo; ");
+				
+				nrRegistro = lerValor("Informe o nº do registro para alteração:", sc, nrRegistro);
 				int campoAlterando = sc.nextInt();
 				adicionarValoresArray(nomes, peso, sexos, (nrRegistro - 1), sc, campoAlterando);
 				break;
 			case 5:
-				System.out.println("Informe o n° de registro para alteração:  ");
+				// Imprimir valores por registro
 				nrRegistro = lerValor("Informe o n° de registro para alteração:  ", sc, 0);
 				System.out.printf("Nome: %s\nPeso: %.2f\nSexo: %s", nomes[nrRegistro - 1], peso[nrRegistro - 1],
 						sexos[nrRegistro - 1]);

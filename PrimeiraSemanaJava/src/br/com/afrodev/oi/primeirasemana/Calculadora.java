@@ -1,4 +1,4 @@
-package br.com.afrodev.oi;
+package br.com.afrodev.oi.primeirasemana;
 
 public class Calculadora {
 	
