@@ -9,18 +9,18 @@ public class DesafioAula6 {
 		return sc.next();
 	}
 
-	public static float lerValor(String pergunta, Scanner sc, float valor) {
+	public static Float lerValor(String pergunta, Scanner sc, Float valor) {
 		System.out.println(pergunta);
 		return sc.nextFloat();
 	}
 
-	public static char lerValor(String pergunta, Scanner sc, char valor) {
+	public static Character lerValor(String pergunta, Scanner sc, Character valor) {
 		System.out.println(pergunta);
 		String retorno = sc.next();
 		return retorno.charAt(0);
 	}
 
-	public static int lerValor(String pergunta, Scanner sc, int valor) {
+	public static Integer lerValor(String pergunta, Scanner sc, Integer valor) {
 		System.out.println(pergunta);
 		return sc.nextInt();
 	}
