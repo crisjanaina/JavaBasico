@@ -3,10 +3,10 @@ package br.com.afrodev.oi.segundasemana;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import br.com.afrodev.oi.segundaseamana.models.Animal;
-import br.com.afrodev.oi.segundaseamana.models.Cachorro;
-import br.com.afrodev.oi.segundaseamana.models.Galinha;
-import br.com.afrodev.oi.segundaseamana.models.Gato;
+import br.com.afrodev.oi.segundasemana.models.Animal;
+import br.com.afrodev.oi.segundasemana.models.Cachorro;
+import br.com.afrodev.oi.segundasemana.models.Galinha;
+import br.com.afrodev.oi.segundasemana.models.Gato;
 
 public class ExercicioHeranca {
 

@@ -2,8 +2,8 @@ package br.com.afrodev.oi.segundasemana.dao;
 
 import java.util.ArrayList;
 
-import br.com.afrodev.oi.segundaseamana.dao.inter.AnimalDAOInterface;
-import br.com.afrodev.oi.segundaseamana.models.Animal;;
+import br.com.afrodev.oi.segundasemana.dao.inter.AnimalDAOInterface;
+import br.com.afrodev.oi.segundasemana.models.Animal;;
 
 public class AnimalDAO implements AnimalDAOInterface {
 

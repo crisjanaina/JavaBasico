@@ -1,4 +1,4 @@
-package br.com.afrodev.oi.segundaseamana.models;
+package br.com.afrodev.oi.segundasemana.models;
 
 public class Pessoa extends ClassePadrao {
 

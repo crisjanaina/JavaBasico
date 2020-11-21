@@ -1,4 +1,4 @@
-package br.com.afrodev.oi.segundaseamana.models;
+package br.com.afrodev.oi.segundasemana.models;
 
 //Abstração, Encapsulamento ,Herança, Polimofismo
 public class Livro extends ClassePadrao {
