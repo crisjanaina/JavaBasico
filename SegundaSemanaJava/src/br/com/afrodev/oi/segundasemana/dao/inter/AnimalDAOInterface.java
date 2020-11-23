@@ -6,7 +6,7 @@ import br.com.afrodev.oi.segundasemana.models.Animal;
 
 public  interface AnimalDAOInterface {
 	
-	public Animal buscarAnimal(Integer identificador);
+	public Animal buscarAnimal(Long identificador);
 
 	public Animal buscarAnimalPorNome(String nome);
 
@@ -19,6 +19,7 @@ public  interface AnimalDAOInterface {
 	public ArrayList<Animal> consultarAnimais();
 
 	public int deletarAnimal(ArrayList<Animal> animais);
+
 	
 	
 }

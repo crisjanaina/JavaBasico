@@ -2,6 +2,10 @@ package br.com.afrodev.oi.segundasemana;
 
 import java.util.Scanner;
 
+import br.com.afrodev.oi.segundasemana.models.Livro;
+
+import br.com.afrodev.oi.segundasemana.util.Leitor;
+
 public class ExercicioLivros {
 
 	public static void main(String[] args) {

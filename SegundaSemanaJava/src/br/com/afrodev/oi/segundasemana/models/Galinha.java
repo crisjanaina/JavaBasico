@@ -3,6 +3,10 @@ package br.com.afrodev.oi.segundasemana.models;
 public class Galinha extends Animal {
 
 	private Float tamanhoDoPoleiro;
+	
+	public Galinha() {
+		
+	}
 
 	public Float getTamanhoDoPoleiro() {
 		return tamanhoDoPoleiro;

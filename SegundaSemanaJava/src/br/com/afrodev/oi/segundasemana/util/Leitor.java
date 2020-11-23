@@ -1,4 +1,4 @@
-package br.com.afrodev.oi.segundasemana;
+package br.com.afrodev.oi.segundasemana.util;
 
 import java.util.Scanner;
 
@@ -36,6 +36,25 @@ public class Leitor {
 			System.out.println("Erro....");
 		}
 
+	}
+
+	public static Boolean lerValor(String pergunta, Scanner sc, Boolean b) {
+
+		String retorno = "";
+		do {
+			System.out.println(pergunta);
+			retorno = sc.next();
+		} while (!retorno.toUpperCase().equals("SIM") || retorno.toUpperCase().equals("NAO"));
+		if (retorno.toUpperCase().equals("SIM")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public static Long lerValor(String pergunta, Scanner sc, Long l) {
+		System.out.println(pergunta);
+		return sc.nextLong();
 	}
 
 }

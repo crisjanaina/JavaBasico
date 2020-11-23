@@ -2,6 +2,9 @@ package br.com.afrodev.oi.segundasemana;
 
 import java.util.Scanner;
 
+import br.com.afrodev.oi.segundasemana.models.Livro;
+import br.com.afrodev.oi.segundasemana.util.Leitor;
+
 public class ControleDeLivros {
 
 	public static Livro editarRegistroDeLivro(Livro livro, Scanner sc) {
