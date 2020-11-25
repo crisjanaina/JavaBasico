@@ -1,34 +1,29 @@
 package br.com.terceira;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
-import br.com.terceira.conexao.MinhaConexao;
+import br.com.terceiro.dao.UsuarioDAO;
+import br.com.terceiro.models.Usuario;
 
 public class Principal {
 	
-	private static Connection cn = null;
-
 	public static void main(String[] args) {
 
-		cn = MinhaConexao.getInstance();
-
-		try {
-			PreparedStatement ps = cn.prepareStatement("SELECT * FROM TB_USUARIO");
-
-			ResultSet rs = ps.executeQuery();
-
-			while (rs.next()) {
-				System.out.println(rs.getLong("idt"));
-				System.out.println(rs.getString("nme_usuario"));
-
-			}
-
-		} catch (SQLException e) {
-			System.out.println(e);
-		}
+		UsuarioDAO dao = new UsuarioDAO();
+		Usuario u = new Usuario();
+		u.setNmeUsuario("Janaína Maciel");
+		u.setUsrUsuario("janaina.maciel");
+		u.setIdt(dao.cadastrarUsuario(u, "3107").longValue());
+		dao.verificarUsuarioESenha(u.getUsrUsuario(), "3107");
+		u.setNmeUsuario("Janaína Maciel");
+		dao.editarUsuario(u);
+		u = dao.buscarUsuario(u.getIdt());
+		System.out.println(u.getNmeUsuario());
+		
+		/**
+		 * Crie um método login: Retorna true (Caso usuário e senha esteja correto) e
+		 * false(Quando usuário e senha estiver errado) Informe "Login realizado com
+		 * sucesso!" caso true ou Seu Usuário ou senha Estão incorretos, informe
+		 * novamente. (crie um loop com a opção para sair)
+		 */
 
 	}
 

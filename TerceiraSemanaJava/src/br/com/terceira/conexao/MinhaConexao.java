@@ -15,7 +15,7 @@ public class MinhaConexao {
 	private static Connection instance = null;
 
 
-	@SuppressWarnings("finally")
+	
 	public synchronized static Connection getInstance() {
 
 		try {
