@@ -29,8 +29,8 @@ public class Principal {
 
 		Scanner sc = new Scanner(System.in);
 		Integer menu = 0;
-		if(login(sc, dao) == 1) {
-			
+		if (login(sc, dao) == 1) {
+
 			do {
 				menu = Leitor.lerValor("1) Buscar Todos\n2) Cadastrar\n3) Editar\n4) Deletar", sc, menu);
 				Leitor.limparTela();
@@ -51,37 +51,42 @@ public class Principal {
 					System.out.println("Opção Inválida");
 					break;
 				}
-				
+
 			} while (menu != 0);
 		}
-		
+
 		System.out.println("Saindo...");
-		
+
 	}
 
-	/*private static Integer verificarLogin(Scanner sc, UsuarioDAO dao) {
-		Integer testeLogin = 0;
-		Boolean tentarNovamente = false;
-		do {
-			tentarNovamente = false;
-			String usuario = Leitor.lerValor("Usuário", sc);
-			String senha = Leitor.lerValor("Senha", sc);
-			if (dao.verificarUsuarioESenha(usuario, senha)) {
-				System.out.println("Login realizado com sucesso!");
-				testeLogin = 1;
-			} else {
-				System.out.println("Seu usuário ou senha estão incorretos!");
-				tentarNovamente = Leitor.lerValor("Gostaria de tentar novamente - SIM/NAO: ", sc, tentarNovamente);
-			}
+	/*
+	 * private static Integer verificarLogin(Scanner sc, UsuarioDAO dao) { Integer
+	 * testeLogin = 0; Boolean tentarNovamente = false; do { tentarNovamente =
+	 * false; String usuario = Leitor.lerValor("Usuário", sc); String senha =
+	 * Leitor.lerValor("Senha", sc); if (dao.verificarUsuarioESenha(usuario, senha))
+	 * { System.out.println("Login realizado com sucesso!"); testeLogin = 1; } else
+	 * { System.out.println("Seu usuário ou senha estão incorretos!");
+	 * tentarNovamente = Leitor.lerValor("Gostaria de tentar novamente - SIM/NAO: ",
+	 * sc, tentarNovamente); }
+	 * 
+	 * } while (testeLogin != 0 || tentarNovamente); return testeLogin;
+	 * 
+	 * }
+	 */
 
-		} while (testeLogin != 0 || tentarNovamente);
-		return testeLogin;
-
-	}*/
-	
 	private static void deletarUsuario(UsuarioDAO dao, Scanner sc) {
 		Usuario usuarioSelecionado = buscarUsuarioPorParteDoNome(dao, sc,
 				"Qual o identificador do usuário que deseja deletar ? ");
+		if (usuarioSelecionado != null) {
+			if (dao.deletarUsuario(usuarioSelecionado.getIdt()) > 0) {
+				System.out.printf("Usuário %s deletado com sucesso!", usuarioSelecionado.getNmeUsuario());
+			} else {
+				System.out.printf("Não foi possível deletar o usuário %s", usuarioSelecionado.getNmeUsuario());
+			}
+
+		} else {
+			System.out.printf("Nenhum usuário para deletar!");
+		}
 	}
 
 	private static void editarUsuario(UsuarioDAO dao, Scanner sc) {
