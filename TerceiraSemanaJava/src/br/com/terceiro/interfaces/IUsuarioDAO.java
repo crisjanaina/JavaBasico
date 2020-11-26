@@ -17,5 +17,7 @@ public interface IUsuarioDAO {
 	Integer deletarUsuario(Long id);
 	
 	Integer editarUsuario(Usuario u);
+	
+	List<Usuario> buscarUsuariosPorParteDoNome(String nome);
 
 }
