@@ -132,7 +132,7 @@ public class Principal {
 			Long identificadoUsuarioSelecionado) {
 		Usuario u = null;
 		for (int i = 0; i < usuarios.size(); i++) {
-			if (u.getIdt().equals(identificadoUsuarioSelecionado)) {
+			if (usuarios.get(i).getIdt().equals(identificadoUsuarioSelecionado)) {
 				u = usuarios.get(i);
 			}
 		}
