@@ -11,8 +11,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-@Entity(name = "tb_pessoa")
+@Entity
+@Table(name= "tb_pessoa")
 public class Pessoa {
 
 	@Id

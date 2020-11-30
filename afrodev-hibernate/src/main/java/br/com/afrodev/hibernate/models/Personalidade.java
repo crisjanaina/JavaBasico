@@ -5,8 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity(name = "tb_personalidade")
+@Entity
+@Table(name= "tb_personalidade")
 public class Personalidade {
 
 	@Id
@@ -16,6 +18,11 @@ public class Personalidade {
 
 	@Column(name = "nme_personalidade", length = 200)
 	private String nome;
+	
+	public Personalidade() {
+		super();
+		
+	}
 
 	public Personalidade(Long idt, String nome) {
 		super();
@@ -42,6 +49,14 @@ public class Personalidade {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Identificador: "
+				.concat(this.getIdt().toString())
+				.concat("\nNome:").concat(this.getNome());
 	}
 
 }
