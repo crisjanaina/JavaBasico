@@ -30,7 +30,7 @@ public class MenuPessoa {
 		Scanner sc = new Scanner(System.in);
 		Integer opcao = 0;
 		do {
-			opcao = Leitor.lerValor("1) CADASTRAR\n2) TODOS\n", sc, 0);
+			opcao = Leitor.lerValor("1) CADASTRAR\n2) CONSULTAR TODOS\n3) DELETAR", sc, 0);
 			System.out.println("\n--------------------------\n");
 			switch (opcao.intValue()) {
 			case 1:
@@ -39,12 +39,23 @@ public class MenuPessoa {
 				em.getTransaction().commit();
 				break;
 			case 2:
-				buscarTodos(pessoaDAO);
+				buscarTodos(pessoaDAO, personalidadeDAO);
+				break;
+			case 3:
+				deletar(pessoaDAO, personalidadeDAO);
 				break;
 			default:
 				break;
 			}
 		} while (opcao != 0);
+	}
+
+	private static void deletar(PessoaDAO pessoaDAO, PersonalidadeDAO personalidadeDAO) {
+		Pessoa p = new Pessoa();
+		
+		pessoaDAO.deletar(p);
+		
+		
 	}
 
 	private static void cadastrar(PersonalidadeDAO personalidadeDAO, PessoaDAO pessoaDAO, Scanner sc) {
@@ -91,11 +102,18 @@ public class MenuPessoa {
 
 	}
 
-	private static void buscarTodos(PessoaDAO pessoaDAO) {
+	private static void buscarTodos(PessoaDAO pessoaDAO, PersonalidadeDAO personalidadeDAO) {
 
 		List<Pessoa> pessoas = pessoaDAO.consultarTodos();
+		List<Personalidade> personalidades = personalidadeDAO.consultarTodos();
 		pessoas.forEach(pessoa -> {
-			System.out.println(pessoa);
+			personalidades.forEach(personalidade -> {
+				for (int i = 0; i < 1; i++) {
+					System.out.println(pessoa + " e sua respectiva " + personalidade);
+
+				}
+
+			});
 		});
 
 	}

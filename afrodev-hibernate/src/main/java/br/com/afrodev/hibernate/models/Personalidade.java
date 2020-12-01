@@ -53,10 +53,9 @@ public class Personalidade {
 	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return "Identificador: "
+		return /*"Identificador: "
 				.concat(this.getIdt().toString())
-				.concat("\nNome:").concat(this.getNome());
+				.concat*/("personalidade é:").concat(this.getNome());
 	}
 
 }
